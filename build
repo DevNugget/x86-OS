@@ -1,16 +1,20 @@
 #!/bin/bash
 
+# Assembling
 nasm -f elf32 loader.s
 nasm -f elf32 io.s
 
-
+# Compiling C
 i386-elf-gcc -ffreestanding -Wall -Wextra -Werror -c io.c -o ioc.o
 i386-elf-gcc -ffreestanding -Wall -Wextra -Werror -c kernel.c -o kernel.o
 
+# Linking
 i386-elf-ld -T linker.ld -melf_i386 loader.o io.o kernel.o ioc.o -o kernel.elf 
 
+# Copy binary to iso folder
 cp kernel.elf iso/boot
 
+# Generate iso
 genisoimage -R                              \
                 -b boot/grub/stage2_eltorito    \
                 -no-emul-boot                   \
@@ -22,4 +26,8 @@ genisoimage -R                              \
                 -o os.iso                       \
                 iso
 
-
+# Clean up
+rm ioc.o
+rm io.o
+rm loader.o
+rm kernel.o
