@@ -15,9 +15,8 @@ align 4                         ; Code must be 4 byte aligned
 loader:                         ; Loader label (defined as entry point in linker script)
     ; Point esp to start of stack (end of memory area)
     mov esp, kernel_stack + KERNEL_STACK_SIZE
-    
-    extern kmain
 
+    extern kmain
     call kmain
 
 .loop:
@@ -27,3 +26,4 @@ section .bss                   ; Section for uninitialized data
 align 4                         ; Align by 4 bytes
 kernel_stack:                   ; Label points to beginning of memory
     resb KERNEL_STACK_SIZE      ; Reserve memory for stack
+

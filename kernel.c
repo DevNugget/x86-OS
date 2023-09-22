@@ -1,9 +1,62 @@
 #include "include/io.h"
+#include "include/gdt.h"
+#include "include/memory.h"
 
 void kmain() {
-    unsigned short gl_cursor_pos = 0;
+    init_gdt();
 
-    frame_buf_cls(FB_BLACK, &gl_cursor_pos);
+    //unsigned short gl_cursor_pos = 0;
 
-    frame_buf_ww("Hello World!", 12, FB_WHITE, FB_BLACK, &gl_cursor_pos);
+    frame_buf_cls(FB_BLACK);
+
+    //frame_buf_mc(0,0);
+
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_LIGHT_GREY, FB_BLACK);
+    frame_buf_ww("Hello World!\n", FB_DARK_GREY, FB_BLACK);
 }

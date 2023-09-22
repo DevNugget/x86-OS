@@ -15,7 +15,7 @@
 #define FB_MAGENTA        5
 #define FB_BROWN          6
 #define FB_LIGHT_GREY     7
-#define FB_DARK_GRAY      8
+#define FB_DARK_GREY      8
 #define FB_LIGHT_BLUE     9
 #define FB_LIGHT_GREEN   10
 #define FB_LIGHT_CYAN    11
@@ -24,19 +24,24 @@
 #define FB_LIGHT_BROWN   14
 #define FB_WHITE         15
 
+#define FB_WIDTH         80
+#define FB_HEIGHT        25
+
 // Wrapper function for (assembly) outb in io.s
 void outb(unsigned short port, unsigned char data);
 
 // Clear frame buffer
-void frame_buf_cls(unsigned char color, unsigned short *gl_pos);
+void frame_buf_cls(unsigned char color);
 
 // Move frame buffer cursor
-void frame_buf_mc(unsigned short pos, unsigned short * gl_pos);
+void frame_buf_mc(unsigned short pos_x, unsigned short pos_y);
 
 // Write character to frame buffer
 void frame_buf_wc(unsigned int i, char c, unsigned char fg, unsigned char bg);
 
 // Write word to frame buffer
-void frame_buf_ww(char *text, unsigned int len, unsigned char fg, unsigned char bg, unsigned short * gl_pos);
+void frame_buf_ww(char *text, unsigned char fg, unsigned char bg);
+
+void frame_buf_scrl();
 
 #endif
