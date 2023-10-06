@@ -13,7 +13,7 @@ void idt_set_gate(unsigned char idx, unsigned long base, unsigned short sel, uns
 void init_idt() {
     // Sets up pointer to IDT
     idt_ptr.limit = (sizeof(idt_entry_t) * IDT_SIZE) - 1;
-    idt_ptr.base = &idt;
+    idt_ptr.base = (unsigned int)&idt;
 
     // Clear out IDT, initialize to 0
     memset(&idt, 0, sizeof(idt_entry_t) * IDT_SIZE); 

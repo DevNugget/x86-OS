@@ -9,12 +9,12 @@ typedef struct {
     unsigned char always0; // Will always be 0
     unsigned char flags;
     unsigned short base_hi;  
-} idt_entry_t __attribute__((packed));
+} __attribute__((packed)) idt_entry_t;
 
 typedef struct {
     unsigned short limit;
     unsigned int base;
-} idt_ptr_t __attribute__((packed));
+} __attribute__((packed)) idt_ptr_t;
 
 idt_entry_t idt[IDT_SIZE];
 idt_ptr_t idt_ptr;
